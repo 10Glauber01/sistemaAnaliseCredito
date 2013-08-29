@@ -4,6 +4,7 @@
  */
 package gerenciadorCredito.Model;
 
+import java.io.Serializable;
 import javax.persistence.*;
 
 /**
@@ -11,7 +12,7 @@ import javax.persistence.*;
  * @author vanderson
  */
 @Entity
-public class Lojista {
+public class Lojista implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
