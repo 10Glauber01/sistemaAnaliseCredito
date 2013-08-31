@@ -34,7 +34,7 @@ public class AdminInterceptor implements Interceptor {
     }
 
     public void intercept(InterceptorStack stack, ResourceMethod method, Object resourceInstance) {
-        if (userSession.isLogged() && "admin".equals(userSession.getUser().getEmail())) {
+        if (userSession.isLogged() && (userSession.getUser().getAdmin() == 1)) {
             stack.next(method, resourceInstance);
         } else {
             result.include("error", "Sem permissão!!").redirectTo(LoginController.class).login();

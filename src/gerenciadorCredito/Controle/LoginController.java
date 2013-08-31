@@ -39,18 +39,23 @@ public class LoginController {
         System.out.println(lojista.getEmail() + "\n" + lojista.getPass());
         Lojista lojistaNoBD = lojistaDAO.getLojista(lojista);
         if (lojistaNoBD != null) {
+
             if (lojistaNoBD.getEmail().equals(lojista.getEmail())
                     && lojistaNoBD.getPass().equals(lojista.getPass())) {
-                userSession.setUser(lojista);
-                result.redirectTo(IndexController.class).index();
-            } else if ("admin".equals(lojista.getEmail()) && 
-                    "admin".equals(lojista.getPass())) {
-                userSession.setUser(lojista);
-                result.redirectTo(MenuAdminController.class).menuAdmin();
+                userSession.setUser(lojistaNoBD);
+
+                if (lojistaNoBD.getAdmin() != 0) {
+                    result.redirectTo(MenuAdminController.class).menuAdmin();
+                } else {
+                    result.redirectTo(IndexController.class).index();
+                }
             } else {
-                result.include("error", "E-mail ou senha incorreta!")
+                result.include("error", "Senha incorreta!")
                         .redirectTo(this).login();
             }
+        } else {
+            result.include("error", "E-mail incorreto!")
+                    .redirectTo(this).login();
         }
     }
 

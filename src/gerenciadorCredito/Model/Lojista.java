@@ -19,6 +19,7 @@ public class Lojista implements Serializable {
     private Long id;
     private String email;
     private String pass;
+    private int admin; // 0 normal user | 1 admin
 
     public Long getId() {
         return id;
@@ -43,6 +44,15 @@ public class Lojista implements Serializable {
     public void setPass(String pass) {
         this.pass = pass;
     }
+
+    public int getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(int admin) {
+        this.admin = admin;
+    }
+    
     
     
 }

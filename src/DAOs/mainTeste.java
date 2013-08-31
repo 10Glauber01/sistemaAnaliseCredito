@@ -16,8 +16,8 @@ public class mainTeste {
   
         LojistaDAO dao = new LojistaDAO();
         Lojista ls = new Lojista();
-        ls.setEmail("vandersonmr2@gmail.com");
+        ls.setEmail("teste");
         ls = dao.getLojista(ls);
-        System.out.printf("senha: "+ls.getPass());
+        System.out.printf("senha: "+ls);
     }
 }
