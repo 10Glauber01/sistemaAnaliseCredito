@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import gerenciadorCredito.Model.ConsultaExternaDados;
+import gerenciadorCredito.Model.ValidadorCPF;
 
 /**
  *
@@ -28,6 +29,11 @@ public class MenuConsultaExternaController {
 
     @Path("/consultarExternamente")
     public void consultarExternamente(ConsultaExternaDados consulta) {
-        result.redirectTo(ResultadosController.class).resultadoConsultaExterna(consulta);
+        if(!(ValidadorCPF.CPF(consulta.getCpf()))){
+            result.include("msg", "CPF inválido!");
+            result.redirectTo(MenuConsultaExternaController.class).menuConsultaExterna();
+        }else{
+            result.redirectTo(ResultadosController.class).resultadoConsultaExterna(consulta);
+        }
     }
 }

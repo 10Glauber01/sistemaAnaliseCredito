@@ -45,10 +45,11 @@
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
             </li>
         </ul>
+        <h3 style="color: red;margin-left: auto; margin-right: auto" align="center">${msg}</h3>
         <form id="consultaExternaForm" action="${pageContext.request.contextPath}/consultarExternamente" method="get">
             <fieldset>
                 <legend><h1>Análise de risco realizada com o servidor afiliados da A.R.I Inc</h1></legend>
-                 
+
                 <li>
                     <label> CPF* (000.000.000-00): </label>
                     <input type="text" name="consulta.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
