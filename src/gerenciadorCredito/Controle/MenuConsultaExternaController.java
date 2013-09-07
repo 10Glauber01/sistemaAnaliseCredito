@@ -7,6 +7,7 @@ package gerenciadorCredito.Controle;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import gerenciadorCredito.Model.ConsultaExternaDados;
 
 /**
  *
@@ -26,7 +27,7 @@ public class MenuConsultaExternaController {
     }
 
     @Path("/consultarExternamente")
-    public void consultarExternamente() {
-        result.redirectTo(ResultadosController.class).resultadoConsultaExterna();
+    public void consultarExternamente(ConsultaExternaDados consulta) {
+        result.redirectTo(ResultadosController.class).resultadoConsultaExterna(consulta);
     }
 }

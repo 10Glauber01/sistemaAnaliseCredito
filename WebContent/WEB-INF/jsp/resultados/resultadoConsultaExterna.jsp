@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -143,8 +145,12 @@
                         </tr>
                         <tr class="cor6">
                             <td align="center">
-                                === NADA CONSTA PARA O CNPJ/CPF CONSULTADO ===
-                            </td>
+                                <c:forEach items="${resultado.pendenciasFinanceiras}" var="pendencia">
+                            <tr>
+                                <td>${pendencia}</td>
+                            </tr>
+                        </c:forEach>
+                        </td>
                         </tr>
                     </tbody>
                 </table>
@@ -163,8 +169,12 @@
                                         </tr>
                                         <tr class="cor6">
                                             <td align="center">
-                                                === NADA CONSTA PARA O CNPJ/CPF CONSULTADO ===
-                                            </td>
+                                                <c:forEach items="${resultado.informaçõesDoConcentre}" var="pendencia">
+                                            <tr>
+                                                <td>${pendencia}</td>
+                                            </tr>
+                                        </c:forEach>
+                                        </td>
                                         </tr>
                                     </tbody></table>
                             </td>
@@ -183,8 +193,12 @@
                         </tr>
                         <tr class="cor6">
                             <td align="center">
-                                === NADA CONSTA PARA O CNPJ CONSULTADO ===
-                            </td>
+                                <c:forEach items="${resultado.informaçõesDoRecheque}" var="pendencia">
+                            <tr>
+                                <td>${pendencia}</td>
+                            </tr>
+                        </c:forEach>
+                        </td>
                         </tr>
                     </tbody></table>
 

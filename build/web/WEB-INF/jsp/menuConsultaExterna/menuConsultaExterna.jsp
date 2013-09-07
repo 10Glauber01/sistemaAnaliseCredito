@@ -29,10 +29,10 @@
                         <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
                     </li>
                 </ul>
-            <li>
+            </li>
             <li>
                 <a href="${pageContext.request.contextPath}/gerarBoleto">Gerar Boleto</a>
-            <li>
+            </li>
             <li>
                 <a >Gerenciamento de Lojista</a>
                 <ul>
@@ -40,25 +40,27 @@
                     <li><a href="${pageContext.request.contextPath}/menuBuscarCadastro">Buscar Cadastro</a></li>
                     <!--<li><a href="${pageContext.request.contextPath}/menuAlterarCadastro">Altera Cadastro</a></li>-->
                 </ul>
-            <li>
+            </li>
             <li>
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
-            <li>
+            </li>
         </ul>
-        <form action="${pageContext.request.contextPath}/consultarExternamente">
+        <form id="consultaExternaForm" action="${pageContext.request.contextPath}/consultarExternamente" method="get">
             <fieldset>
                 <legend><h1>Análise de risco realizada com o servidor afiliados da A.R.I Inc</h1></legend>
-
+                 
                 <li>
-                    <label> CPF* (000.000.000-00): </label><input nome="consultaExterna.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><bR>
-                    <label> Servidor: </label><select nome="consultaExterna.servidor">
+                    <label> CPF* (000.000.000-00): </label>
+                    <input type="text" name="consulta.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                    <label> Servidor: </label>
+                    <select name="consulta.servidor">
                         <option value="SPC"> SPC</option>
                         <option value="SERASA"> SERASA</option>
                     </select>
                 </li>
                 <br><br>
                 <li>
-                    <input type="submit"  class="btn" value="Realizar Consulta"><br>
+                    <input type="submit"  class="btn" value="Realizar Consulta"/><br>
                 <spam class="required_notification">Itens com * são obrigatórios.</spam>
                 </li>
                 <br><br>
