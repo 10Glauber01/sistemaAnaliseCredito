@@ -45,30 +45,34 @@
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
             <li>
         </ul>
-        <form action="${pageContext.request.contextPath}/boleto" method="post">
+        <form id="gerarBoletoForm" action="${pageContext.request.contextPath}/boleto" method="post">
             <fieldset>
                 <legend><h1>Gerador de Boleto da A.R.I Inc</h1></legend>
 
-                <dt>
-                <label> Nome*: </label><input nome="boleto.nome" required><br>
-                </dt><br>
-                <dt>
-                <label> CPF* (000.000.000-00): </label><input nome="boleto.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><bR>
-                </dt><br>
-                <dt>
-                <label> Valor*: </label><input nome="boleto.valor" patern="^\d+(\.|\,)\d{2}$" required><br>
-                </dt><br>
-                <dt>
-                <label> Banco: </label><select nome="boleto.banco">
-                    <option value="SPC"> Itaú</option>
-                    <option value="SERASA"> Caixa</option>
-                </select>
-                </dt>
+                <li>
+                    <label> Nome*: </label>
+                    <input type="text" name="boleto.nome" required><br><br>                    
+                    <label> CPF* (000.000.000-00): </label>
+                    <input type="text" name="boleto.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                    <label> Valor*: </label>
+                    <input name="boleto.valor" required><br><br>
+                    <label> Endereço*: </label>
+                    <input type="text" name="boleto.endereco" required> <br><br>
+                    <label> CEP*: </label>
+                    <input type="text" name="boleto.cep" pattern="\d{5}-\d{3}" required> <br><br>
+                    <label> Banco*: </label>
+                    <select name="boleto.banco">
+                        <option value="Caixa"> Caixa</option>
+                        <option value="Itaú"> Itaú</option>
+                        <option value="Banco do Brasil">Banco do Brasil</option>
+                        <option value="Bradesco"> Bradesco</option>
+                    </select>
+                </li>
                 <br><br>
-                <dt>
-                <input type="submit"  class="btn" value="Realizar Consulta"><br>
+                <li>
+                    <input type="submit"  class="btn" value="Gerar Boleto"/><br>
                 <spam class="required_notification">Itens com * são obrigatórios.</spam>
-                </dt>
+                </li>
                 <br><br>
                 Sistema de Análise de Crédito. 2013. Criado pela equipe <a href="sobre.html">Lobos</a>.
             </fieldset>
