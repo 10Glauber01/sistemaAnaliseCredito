@@ -5,6 +5,15 @@
 @import url("/WEB-INF/css/bootstrap.min.css");
 @import url("/WEB-INF/css/bootstrap-responsive.min.css");
 
+progress {
+
+  width: 65em;
+  height: 4.8em;
+
+}
+
+
+
 html,
 input,
 select,

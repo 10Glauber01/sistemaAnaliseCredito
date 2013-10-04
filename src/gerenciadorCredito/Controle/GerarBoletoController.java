@@ -79,8 +79,16 @@ public class GerarBoletoController {
         enderecoSac.setLocalidade(boleto.getEndereco());
         enderecoSac.setCep(boleto.getCep());
         sacado.addEndereco(enderecoSac);
-
-        ContaBancaria contaBancaria = new ContaBancaria(BancosSuportados.BANCO_BRADESCO.create());
+        ContaBancaria contaBancaria = null;
+        if(boleto.getBanco().equalsIgnoreCase("caixa")){
+             contaBancaria = new ContaBancaria(BancosSuportados.CAIXA_ECONOMICA_FEDERAL.create());
+        }else if(boleto.getBanco().equalsIgnoreCase("banco do brasil")){
+             contaBancaria = new ContaBancaria(BancosSuportados.BANCO_DO_BRASIL.create());
+        }else if(boleto.getBanco().equalsIgnoreCase("itaú")){
+             contaBancaria = new ContaBancaria(BancosSuportados.BANCO_ITAU.create());
+        }
+     
+  
         contaBancaria.setNumeroDaConta(new NumeroDaConta(123456, "0"));
         contaBancaria.setCarteira(new Carteira(30));
         contaBancaria.setAgencia(new Agencia(0001, "1"));

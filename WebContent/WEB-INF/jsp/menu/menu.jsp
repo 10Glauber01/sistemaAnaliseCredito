@@ -26,10 +26,10 @@
                 <a>Consultas</a>
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Consulta estatística</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Consultar inadimplência</a>
                     </li>
                 </ul>
             <li>
@@ -56,7 +56,7 @@
                 <legend><h1>BEM VINDO AO SISTEMA DE ANÁLISE DE CRÉDITO DA A.R.I Inc</h1></legend>
                 <Br><br>
                 <form action="${pageContext.request.contextPath}/menuConsultaInterna">
-                    <input type="submit"  class="btn" value="Consulta Interna"/>
+                    <input type="submit"  class="btn" value="Consulta estatística"/>
                 </form>
                 <Br><br><br>
                 <form action="${pageContext.request.contextPath}/gerarBoleto">

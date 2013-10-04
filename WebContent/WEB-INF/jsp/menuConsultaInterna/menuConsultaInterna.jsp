@@ -10,6 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
+         <script src="/WEB-INF/mascara.js.js"></script>
         <style>
             @import url("/WEB-INF/style.css");
         </style>
@@ -20,14 +21,14 @@
             <li>
                 <a href="${pageContext.request.contextPath}/menu">Home</a>
             </li>
-            <li>
-                <a >Consultas</a>
+         <li>
+                <a>Consultas</a>
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Consulta estatística</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Consultar inadimplência</a>
                     </li>
                 </ul>
             <li>
@@ -54,10 +55,12 @@
 
 
                 <li>
-                    <label> CPF* (000.000.000-00): </label><input nome="consulta.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                    <label> CPF* : </label><input name="consulta.cpf"
+ 
+                           onKeyPress="MascaraCPF(this);" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
                 </li>
                 <li>
-                    <label> RG* (00.000.000-0): </label><input nome="consulta.rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" required><br><br>
+                    <label> RG* (00.000.000-1): </label><input name="consulta.rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" required><br><br>
                 </li>
 
                 <li>
@@ -93,7 +96,7 @@
                     </select><br><br>
                 </li>
                 <li>
-                    <label> Nome: </label><input nome="consulta.nome"> <br><br>
+                    <label> Nome: </label><input name="consulta.nome"> <br><br>
                 </li>
                 <li>
                     <label> Data de Nascimento: </label><input name="consulta.data" type="date">  <br><br>
@@ -133,7 +136,7 @@
                 <br>
 
                 <li>
-                    <label> Estado Civíl: </label> <select name="consulta.estado"> 
+                    <label> Estado Civíl: </label> <select name="consulta.estadoC"> 
                         <option value="solteiro">Solteiro(a)</option> 
                         <option value="casado">Casado(a)</option> 
                     </select>
@@ -141,47 +144,50 @@
                 <br>
 
                 <li>
-                    <label> Endereço: </label><input nome="consulta.endereco"> 
+                    <label> Endereço: </label><input name="consulta.endereco"> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Bairro: </label><input nome="consulta.bairro"> 
+                    <label> Bairro: </label><input name="consulta.bairro"> 
                 </li>
                 <br>
 
                 <li>
-                    <label> CEP (00000-000): </label><input nome="consulta.cep" pattern="\d{5}-\d{3}"> 
+                    <label> CEP : </label><input name="consulta.cep" 
+                                                onKeyPress="MascaraCep(this);"
+ maxlength="10" 
+                    pattern="\d{2}.\d{3}-\d{3}"> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Cidade: </label><input nome="consulta.cidade"> 
+                    <label> Cidade: </label><input name="consulta.cidade"> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Email: </label><input nome="consulta.email" type="email"> 
+                    <label> Email: </label><input name="consulta.email" type="email"> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Ocupação*: </label><input nome="consulta.ocupacao" required> 
+                    <label> Ocupação*: </label><input name="consulta.ocupacao" required> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Ramo da Atividade*: </label><input nome="consulta.ramo" required> 
+                    <label> Ramo da Atividade*: </label><input name="consulta.ramo" required> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Rendimento*: </label><input nome="consulta.rendimento" pattern="^\d+(\.|\,)\d{2}$" required> 
+                    <label> Rendimento*: </label><input name="consulta.rendimento" pattern="^\d+(\.|\,)\d{2}$" required> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Estado Imóvel*: </label><input nome="consulta.imovel" required> 
+                    <label> Estado Imóvel*: </label><input name="consulta.imovel" required> 
                 </li>
                 <br>
                 <br><br>

@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="/WEB-INF/mascara.js.js"></script>
         <title>Sistema de Análise de Crédito</title>
         <style>
             @import url("/WEB-INF/style.css");
@@ -19,17 +20,17 @@
             <li>
                 <a href="${pageContext.request.contextPath}/menu">Home</a>
             </li>
-            <li>
-                <a >Consultas</a>
+         <li>
+                <a>Consultas</a>
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Consulta estatística</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Consultar inadimplência</a>
                     </li>
                 </ul>
-            </li>
+            <li>
             <li>
                 <a href="${pageContext.request.contextPath}/gerarBoleto">Gerar Boleto</a>
             </li>
@@ -46,13 +47,15 @@
             </li>
         </ul>
         <h3 style="color: red;margin-left: auto; margin-right: auto" align="center">${msg}</h3>
-        <form id="consultaExternaForm" action="${pageContext.request.contextPath}/consultarExternamente" method="get">
+        <form name="form1" id="consultaExternaForm" action="${pageContext.request.contextPath}/consultarExternamente" method="get">
             <fieldset>
                 <legend><h1>Análise de risco realizada com o servidor afiliados da A.R.I Inc</h1></legend>
 
                 <li>
-                    <label> CPF* (000.000.000-00): </label>
-                    <input type="text" name="consulta.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                    <label> CPF* : </label>
+                    <input type="text" name="consulta.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+                           onBlur="ValidarCPF(this);" 
+                            maxlength="14" onrequired><br><br>
                     <label> Servidor: </label>
                     <select name="consulta.servidor">
                         <option value="SPC"> SPC</option>

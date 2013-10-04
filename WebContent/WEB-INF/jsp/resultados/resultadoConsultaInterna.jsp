@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,9 +26,12 @@
                 <div>
                     <table>
                         <tbody>
-                            <tr>
-                                Empresa Exemplo
-                            </tr>
+                            <c:forEach items="${resultado}" var="valor">
+                                <tr><td><h3>${valor.label} (${valor.value}%)<br>0% --------------------------------------------------------50%--------------------------------------------------------- 100%</h3></tr>
+                                <tr>
+                                    <td><progress value="${valor.value}" max="100" ></progress></td>
+                                </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>

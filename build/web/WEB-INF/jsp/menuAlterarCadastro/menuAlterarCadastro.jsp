@@ -21,16 +21,16 @@
                 <a href="${pageContext.request.contextPath}/menu">Home</a>
             </li>
             <li>
-                <a >Consultas</a>
+                <a>Consultas</a>
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Consulta estatística</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Consultar inadimplência</a>
                     </li>
                 </ul>
-            <li>
+            </li>
             <li>
                 <a href="${pageContext.request.contextPath}/gerarBoleto">Gerar Boleto</a>
             <li>
