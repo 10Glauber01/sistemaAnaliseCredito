@@ -19,7 +19,7 @@
     <body>
         <ul id="menu">
             <li>
-                <a href="${pageContext.request.contextPath}/menu">Home</a>
+                <a href="${pageContext.request.contextPath}/menuAdmin">Home</a>
             </li>
             <li>
                 <a href="${pageContext.request.contextPath}/menu">Relatório</a>
@@ -28,7 +28,7 @@
                 <a href="${pageContext.request.contextPath}/menu">Cadastrar Lojista</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/menu">Desabilitar Lojista</a>
+                <a href="${pageContext.request.contextPath}/menuDesabilitarUsuario">Desabilitar Lojista</a>
             </li>
             <li>
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>

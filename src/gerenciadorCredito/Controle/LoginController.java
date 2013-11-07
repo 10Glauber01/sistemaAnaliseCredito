@@ -43,9 +43,14 @@ public class LoginController {
             if (lojistaNoBD.getEmail().equals(lojista.getEmail())
                     && lojistaNoBD.getPass().equals(lojista.getPass())) {
                 userSession.setUser(lojistaNoBD);
-
-                if (lojistaNoBD.getAdmin() != 0) {
+                
+                
+                if (lojistaNoBD.getAdmin() == 1) {
                     result.redirectTo(MenuAdminController.class).menuAdmin();
+                }else if(lojistaNoBD.getAdmin() == -1) {
+                    userSession.logout();
+                    result.include("error", "Usuario desabilitado!")
+                        .redirectTo(this).login();
                 } else {
                     result.redirectTo(IndexController.class).index();
                 }

@@ -15,9 +15,10 @@ public class mainTeste {
     public static void main(String args[]) {
   
         LojistaDAO dao = new LojistaDAO();
-        Lojista ls = new Lojista();
-        ls.setEmail("teste");
-        ls = dao.getLojista(ls);
-        System.out.printf("senha: "+ls);
+        Lojista l = new Lojista();
+        l.setEmail("vandersonmr2@gmail.com");
+        l.setCep("87055510");
+        l.setCnpj("234234324");
+        dao.update(l);
     }
 }

@@ -8,6 +8,8 @@ package gerenciadorCredito.Controle;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import gerenciadorCredito.Model.CadastrarLojista;
+import gerenciadorCredito.Model.Lojista;
 
 
 /**
@@ -28,8 +30,8 @@ public class MenuNovoCadastroController {
 	}
         
         @Path("/cadastrar")
-        public void cadastrar(){
-                result.include("msg", "Cadastro realizado com sucesso!");
+        public void cadastrar(Lojista lojista){
+                result.include("msg", new CadastrarLojista().cadastrar(lojista));
                 result.redirectTo(ResultadosController.class).resultadoMensagem();
         }
 

@@ -1,23 +1,21 @@
 <%-- 
-    Document   : menu
-    Created on : 16/05/2013, 18:36:04
+    Document   : menuConsultaExterna
+    Created on : 16/05/2013, 20:54:11
     Author     : vanderson
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-
-    <style>
-        @import url("/WEB-INF/style.css");
-    </style>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
+        <style>
+            @import url("/WEB-INF/style.css");
+        </style>
     </head>
-
     <body>
-        <ul id="menu">
+         <ul id="menu">
             <li>
                 <a href="${pageContext.request.contextPath}/menuAdmin">Home</a>
             </li>
@@ -35,7 +33,21 @@
             <li><br><br>
                      <li><a href="ajuda.html">Ajuda</a></li>
         </ul>
-    <center>   <h1>SISTEMA GERENCIAL DA A.R.I Inc</h1></center>
+        <form action="${pageContext.request.contextPath}/desabilitarUsuario" method="post">
+            <fieldset>
+                <legend><h1>Desabilitar afiliados já cadastrados</h1></legend>
 
-</body>
+                <li>
+                    <label> Email*: </label><input name="lojista.email" required/>
+                </li>
+                <br><br>
+                <li>
+                    <input type="submit"  class="btn" value="Desabilitar Cadastro"><br>
+                <spam class="required_notification">Itens com * são obrigatórios.</spam>
+                </li>
+                <br><br>
+                Sistema de Análise de Crédito. 2013. Criado pela equipe <a href="sobre.html">Lobos</a>.
+            </fieldset>
+        </form>
+    </body>
 </html>

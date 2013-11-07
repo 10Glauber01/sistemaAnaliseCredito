@@ -28,6 +28,29 @@ public class LojistaDAO {
         s.save(lojista);
         tx.commit();
     }
+    
+    public void update(Lojista lojista){
+        Lojista lojistaID = getLojista(lojista);
+        lojistaID.setCep(lojista.getCep());
+        lojistaID.setCidade(lojista.getCidade());
+        lojistaID.setCnpj(lojista.getCnpj());
+        lojistaID.setEmail(lojista.getEmail());
+        lojistaID.setEstado(lojista.getEstado());
+        lojistaID.setNome(lojista.getNome());
+        lojistaID.setPass(lojista.getPass());
+        lojistaID.setRamo(lojista.getRamo());
+        Transaction t = s.beginTransaction();  
+        s.merge(lojistaID);  
+        t.commit();
+    }
+    
+    public void updateAdmin(Lojista lojista){
+        Lojista lojistaID = getLojista(lojista);
+        lojistaID.setAdmin(lojista.getAdmin());
+        Transaction t = s.beginTransaction();  
+        s.merge(lojistaID);  
+        t.commit();
+    }
 
     public Lojista getLojista(Lojista lojista) {
         Criteria crit;

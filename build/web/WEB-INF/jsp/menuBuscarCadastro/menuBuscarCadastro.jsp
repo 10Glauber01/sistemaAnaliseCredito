@@ -45,12 +45,12 @@
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
             <li>
         </ul>
-        <form action="${pageContext.request.contextPath}/menuAlterarCadastro">
+        <form action="${pageContext.request.contextPath}/cadastro" method="POST">
             <fieldset>
                 <legend><h1>Buscar afiliados já cadastrados</h1></legend>
 
                 <li>
-                    <label> Código Login* (000.000.000): </label><input nome="consultaExterna.cpf" pattern="\d{3}\.\d{3}\.\d{3}" required>
+                    <label> Email*: </label><input name="lojista.email" type="email" required>
                 </li>
                 <br><br>
                 <li>

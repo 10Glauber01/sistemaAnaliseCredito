@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="/WEB-INF/sha256.js"></script>
+        <script src="/WEB-INF/mascara.js.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
         <style>
@@ -21,16 +23,16 @@
                 <a href="${pageContext.request.contextPath}/menu">Home</a>
             </li>
             <li>
-                <a>Consultas</a>
+                <a >Consultas</a>
                 <ul>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Consulta estatística</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
                     </li>
                     <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Consultar inadimplência</a>
+                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
                     </li>
                 </ul>
-            </li>
+            <li>
             <li>
                 <a href="${pageContext.request.contextPath}/gerarBoleto">Gerar Boleto</a>
             <li>
@@ -39,7 +41,7 @@
                 <ul>
                     <li><a href="${pageContext.request.contextPath}/menuNovoCadastro">Novo Cadastro</a></li>
                     <li><a href="${pageContext.request.contextPath}/menuBuscarCadastro">Buscar Cadastro</a></li>
-                    <!--<li><a href="${pageContext.request.contextPath}/menuAlterarCadastro">Alterar Cadastro</a></li>-->
+                  <!-- <li><a href="${pageContext.request.contextPath}/menuAlterarCadastro">Altera Cadastro</a></li>-->
                 </ul>
             <li>
             <li>
@@ -49,30 +51,28 @@
         <form action="${pageContext.request.contextPath}/alterarCadastro" method="post">
 
             <fieldset>
-                <legend><h1>Cadastro A.R.I Inc</h1></legend>
+                <legend><h1>Cadastro de Lojista A.R.I Inc</h1></legend>
 
                 <li>
-                    <label> CNPJ* (00000-000): </label><input nome="consulta.cnpj" pattern="\d{5}-\d{3}" value="00000-000" required><br><br>
+                    <label> CNPJ* (00000-000): </label><input name="lojista.cnpj" pattern="\d{5}-\d{3}" value="${loj.cnpj}" required/><br><br>
+                </li>
+
+                <!-- <li>
+                    <label> Código Login* (000.000.000): </label><input name="lojista.login" pattern="\d{3}.\d{3}.\d{3}" required/><br><br>
+                </li>-->
+
+                <li>
+                    <label> Nome: </label><input name="lojista.nome" value="${loj.nome}"/> <br><br>
+                </li>
+
+
+                <li>
+                    <label> Ramo: </label><input name="lojista.ramo" value="${loj.ramo}"/> <br><br>
                 </li>
 
                 <li>
-                    <label> Código Login* (000.000.000): </label><input nome="consulta.login" pattern="\d{3}.\d{3}.\d{3}" value="000.000.000" required><br><br>
-                </li>
-
-                <li>
-                    <label> Nome: </label><input nome="consulta.nome" value="Empresa Exemplo"> <br><br>
-                </li>
-
-                <li>
-                    <label> Setor: </label><input nome="consulta.setor" value="Vendas"> <br><br>
-                </li>
-
-                <li>
-                    <label> Ramo: </label><input nome="consulta.ramo" value="Bolo"> <br><br>
-                </li>
-
-                <li>
-                    <label> Estado: </label> <select name="consulta.estado"> 
+                    <label> Estado: </label> <select name="lojista.estado"> 
+                        <option value="estado">Selecione o Estado</option> 
                         <option value="ac">Acre</option> 
                         <option value="al">Alagoas</option> 
                         <option value="am">Amazonas</option> 
@@ -104,51 +104,39 @@
                 </li>
                 <br>
 
-
-
                 <li>
-                    <label> Endereço: </label><input nome="consulta.endereco" value="Rua 1"> 
+                    <label> CEP (00000-000): </label><input name="lojista.cep" value="${loj.cep}" 
+                                                            onKeyPress="MascaraCep(this);"
+                                                            maxlength="10" /> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Bairro: </label><input nome="consulta.bairro" value="Bairro 2"> 
+                    <label> Cidade: </label><input name="lojista.cidade" value="${loj.cidade}"/> 
                 </li>
                 <br>
 
                 <li>
-                    <label> CEP (00000-000): </label><input nome="consulta.cep" pattern="\d{5}-\d{3}" value="00000-000"> 
+                    <label> Email*: </label><input name="lojista.email" type="email" value="${loj.email}" required/> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Cidade: </label><input nome="consulta.cidade" value="Maringá"> 
+                    <label> Senha*: </label> <input type="password" id ="pass" name="lojista.pass" required/>
                 </li>
                 <br>
 
-                <li>
-                    <label> Email: </label><input nome="consulta.email" type="email" value="exemplo@exemplo.com"> 
-                </li>
                 <br>
-
                 <li>
-                    <label> Senha*: </label> <input type="password" name="lojista.pass" />
-                </li>
-                <br>
-
-                <li>
-                    <label> Confirmar Senha*: </label> <input type="password" />
-                </li>
-                <br>
-
-
-                <li>
-                    <input type="submit"  class="btn" value="Salvar modificações"><br>
+                    <input type="submit"  class="btn" value="Salvar modificações" onClick="document.getElementById('pass').value
+                                       =new jsSHA(document.getElementById('pass')
+                                       .value, 'TEXT').getHash('SHA-256', 'HEX');
+                                       document.forms['loginForm'].submit();"><br>
+                                    <li>
 
                 <center><form action="${pageContext.request.contextPath}/menu">
                         <input type="submit" onClick="window.history.back()" class="btn" value="Voltar"><br>
                     </form></center>
-
                 <spam class="required_notification">Itens com * são obrigatórios.</spam>
                 </li>
                 <br><br>

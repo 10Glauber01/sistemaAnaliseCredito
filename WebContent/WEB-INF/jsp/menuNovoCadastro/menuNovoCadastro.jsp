@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="/WEB-INF/sha256.js"></script>
+        <script src="/WEB-INF/mascara.js.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
         <style>
@@ -52,27 +54,23 @@
                 <legend><h1>Cadastro de Lojista A.R.I Inc</h1></legend>
 
                 <li>
-                    <label> CNPJ* (00000-000): </label><input nome="consulta.cnpj" pattern="\d{5}-\d{3}" required><br><br>
+                    <label> CNPJ* (00000-000): </label><input name="lojista.cnpj" pattern="\d{5}-\d{3}" required/><br><br>
+                </li>
+
+                <!-- <li>
+                    <label> Código Login* (000.000.000): </label><input name="lojista.login" pattern="\d{3}.\d{3}.\d{3}" required/><br><br>
+                </li>-->
+
+                <li>
+                    <label> Nome: </label><input name="lojista.nome"/> <br><br>
                 </li>
 
                 <li>
-                    <label> Código Login* (000.000.000): </label><input nome="consulta.login" pattern="\d{3}.\d{3}.\d{3}" required><br><br>
+                    <label> Ramo: </label><input name="lojista.ramo"/> <br><br>
                 </li>
 
                 <li>
-                    <label> Nome: </label><input nome="consulta.nome"> <br><br>
-                </li>
-
-                <li>
-                    <label> Setor: </label><input nome="consulta.setor"> <br><br>
-                </li>
-
-                <li>
-                    <label> Ramo: </label><input nome="consulta.ramo"> <br><br>
-                </li>
-
-                <li>
-                    <label> Estado: </label> <select name="consulta.estado"> 
+                    <label> Estado: </label> <select name="lojista.estado"> 
                         <option value="estado">Selecione o Estado</option> 
                         <option value="ac">Acre</option> 
                         <option value="al">Alagoas</option> 
@@ -105,46 +103,34 @@
                 </li>
                 <br>
 
-
-
                 <li>
-                    <label> Endereço: </label><input nome="consulta.endereco"> 
+                    <label> CEP (00000-000): </label><input name="lojista.cep" 
+                                                            onKeyPress="MascaraCep(this);"
+                                                            maxlength="10" /> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Bairro: </label><input nome="consulta.bairro"> 
+                    <label> Cidade: </label><input name="lojista.cidade"/> 
                 </li>
                 <br>
 
                 <li>
-                    <label> CEP (00000-000): </label><input nome="consulta.cep" pattern="\d{5}-\d{3}"> 
+                    <label> Email*: </label><input name="lojista.email" type="email" required/> 
                 </li>
                 <br>
 
                 <li>
-                    <label> Cidade: </label><input nome="consulta.cidade"> 
+                    <label> Senha*: </label> <input type="password" id ="pass" name="lojista.pass"  required/>
                 </li>
                 <br>
 
-                <li>
-                    <label> Email: </label><input nome="consulta.email" type="email"> 
-                </li>
                 <br>
-
                 <li>
-                    <label> Senha*: </label> <input type="password" name="lojista.pass" required/>
-                </li>
-                <br>
-
-                <li>
-                    <label> Confirmar Senha*: </label> <input type="password" required/>
-                </li>
-                <br>
-
-
-                <li>
-                    <input type="submit"  class="btn" value="Cadastrar"><br>
+                    <input type="submit"  class="btn" value="Cadastrar" onClick="document.getElementById('pass').value
+                                       =new jsSHA(document.getElementById('pass')
+                                       .value, 'TEXT').getHash('SHA-256', 'HEX');
+                                       document.forms['loginForm'].submit();"><br>
                 <spam class="required_notification">Itens com * são obrigatórios.</spam>
                 </li>
                 <br><br>

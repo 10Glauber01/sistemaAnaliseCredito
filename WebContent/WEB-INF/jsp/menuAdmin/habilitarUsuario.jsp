@@ -20,37 +20,25 @@
                 <a href="${pageContext.request.contextPath}/menu">Home</a>
             </li>
             <li>
-                <a >Consultas</a>
-                <ul>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaInterna">Servidor Local</a>
-                    </li>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/menuConsultaExterna">Servidor Externo</a>
-                    </li>
-                </ul>
+                <a href="${pageContext.request.contextPath}/menu">Relatório</a>
+            </li>
             <li>
+                <a href="${pageContext.request.contextPath}/menu">Cadastrar Lojista</a>
+            </li>
             <li>
-                <a href="${pageContext.request.contextPath}/gerarBoleto">Gerar Boleto</a>
-            <li>
-            <li>
-                <a >Gerenciamento de Lojista</a>
-                <ul>
-                    <li><a href="${pageContext.request.contextPath}/menuNovoCadastro">Novo Cadastro</a></li>
-                    <li><a href="${pageContext.request.contextPath}/menuBuscarCadastro">Buscar Cadastro</a></li>
-                    <!--<li><a href="${pageContext.request.contextPath}/menuAlterarCadastro">Altera Cadastro</a></li>-->
-                </ul>
-            <li>
+                <a href="${pageContext.request.contextPath}/menu">Desabilitar Lojista</a>
+            </li>
             <li>
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
-            <li>
+            <li><br><br>
+            <li><a href="ajuda.html">Ajuda</a></li>
         </ul>
-        <form action="${pageContext.request.contextPath}/cadastro" method="POST">
+        <form action="${pageContext.request.contextPath}/menuAlterarCadastro">
             <fieldset>
                 <legend><h1>Buscar afiliados já cadastrados</h1></legend>
 
                 <li>
-                    <label> Email*: </label><input name="lojista.email" type="email" required>
+                    <label> Código Login* (000.000.000): </label><input nome="consultaExterna.cpf" pattern="\d{3}\.\d{3}\.\d{3}" required>
                 </li>
                 <br><br>
                 <li>
