@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+        <script type="text/javascript" src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="./mascaras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
         <style>

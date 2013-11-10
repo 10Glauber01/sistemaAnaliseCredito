@@ -17,4 +17,5 @@
         <property name="cep" column="CEP" type="string"/>
         <property name="cidade" column="CIDADE" type="string"/>
     </class>
+   
 </hibernate-mapping>

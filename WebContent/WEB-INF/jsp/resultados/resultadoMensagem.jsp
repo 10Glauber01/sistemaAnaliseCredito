@@ -16,7 +16,7 @@
     </head>
     <body>
 
-        <form action="${pageContext.request.contextPath}/menu">
+        
             <fieldset>
                 <legend><h1 align="center">${msg}</h1></legend>
 
@@ -24,6 +24,6 @@
                 <br><br>
                 Sistema de Análise de Crédito. 2013. Criado pela equipe <a href="sobre.html">Lobos</a>.
             </fieldset>
-        </form>
+
     </body>
 </html>

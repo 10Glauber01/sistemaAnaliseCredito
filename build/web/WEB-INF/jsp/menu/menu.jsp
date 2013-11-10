@@ -51,18 +51,20 @@
         </ul>
 
     <center>  
-        <form>
+
             <fieldset>
                 <legend><h1>BEM VINDO AO SISTEMA DE ANÁLISE DE CRÉDITO DA A.R.I Inc</h1></legend>
-                <Br><br>
+                <br><br>
+         
                 <form action="${pageContext.request.contextPath}/menuConsultaInterna">
                     <input type="submit"  class="btn" value="Consulta estatística"/>
                 </form>
-                <Br><br><br>
+                    
+                <br><br><br>
                 <form action="${pageContext.request.contextPath}/gerarBoleto">
                     <input type="submit"  class="btn" value="Gera Boleto" />
                 </form>
-                <Br>
+                <br>
                 <form action="${pageContext.request.contextPath}/menuNovoCadastro">
                     <input type="submit" class="btn" value="Cadastro de Lojista" />
                 </form><br>
@@ -72,11 +74,6 @@
                 <br><br>
                 Sistema de Análise de Crédito. 2013. Criado pela equipe <a href="sobre.html">Lobos</a>.
             </fieldset>
-
-
-        </form>
-
-
 
     </body>
 </html>

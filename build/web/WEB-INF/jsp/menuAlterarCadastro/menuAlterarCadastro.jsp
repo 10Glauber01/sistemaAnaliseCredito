@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+        <script type="text/javascript" src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="./mascaras.js"></script>
         <script src="/WEB-INF/sha256.js"></script>
         <script src="/WEB-INF/mascara.js.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -106,8 +109,7 @@
 
                 <li>
                     <label> CEP (00000-000): </label><input name="lojista.cep" value="${loj.cep}" 
-                                                            onKeyPress="MascaraCep(this);"
-                                                            maxlength="10" /> 
+                                                    id="cep" /> 
                 </li>
                 <br>
 

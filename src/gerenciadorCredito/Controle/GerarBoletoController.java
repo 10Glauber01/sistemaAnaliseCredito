@@ -13,23 +13,6 @@ import gerenciadorCredito.Model.GeradorDeBoletos;
 
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
-import java.util.Date;
-
-import org.jrimum.bopepo.BancosSuportados;
-import org.jrimum.bopepo.Boleto;
-import org.jrimum.bopepo.view.BoletoViewer;
-import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
-import org.jrimum.domkee.comum.pessoa.endereco.UnidadeFederativa;
-import org.jrimum.domkee.financeiro.banco.febraban.Agencia;
-import org.jrimum.domkee.financeiro.banco.febraban.Carteira;
-import org.jrimum.domkee.financeiro.banco.febraban.Cedente;
-import org.jrimum.domkee.financeiro.banco.febraban.ContaBancaria;
-import org.jrimum.domkee.financeiro.banco.febraban.NumeroDaConta;
-import org.jrimum.domkee.financeiro.banco.febraban.Sacado;
-import org.jrimum.domkee.financeiro.banco.febraban.TipoDeTitulo;
-import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
-import org.jrimum.domkee.financeiro.banco.febraban.Titulo.Aceite;
 
 /**
  *
@@ -62,7 +45,9 @@ public class GerarBoletoController {
 
     @Post("/boleto")
     public File boleto(BoletoARI boleto) {
-        //result;
-        return new GeradorDeBoletos().gerarBolet(boleto);
+        
+        GeradorDeBoletos gb = new GeradorDeBoletos();
+        File file = gb.gerarBolet(boleto);
+        return file;
     }
 }

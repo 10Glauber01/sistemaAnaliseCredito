@@ -14,11 +14,8 @@ public class mainTeste {
 
     public static void main(String args[]) {
   
-        LojistaDAO dao = new LojistaDAO();
-        Lojista l = new Lojista();
-        l.setEmail("vandersonmr2@gmail.com");
-        l.setCep("87055510");
-        l.setCnpj("234234324");
-        dao.update(l);
+        HistoricoDAO dao = new HistoricoDAO();
+        dao.getEstatisticas();
+        dao.close();
     }
 }

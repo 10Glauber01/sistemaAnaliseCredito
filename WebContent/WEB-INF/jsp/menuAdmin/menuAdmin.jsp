@@ -22,18 +22,19 @@
                 <a href="${pageContext.request.contextPath}/menuAdmin">Home</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/menu">Relatório</a>
+                <a href="${pageContext.request.contextPath}/resultadoRelatorio">Relatório</a>
             </li>
-            <li>
-                <a href="${pageContext.request.contextPath}/menu">Cadastrar Lojista</a>
-            </li>
+            <li><a href="${pageContext.request.contextPath}/menuNovoCadastro">Cadastrar lojista</a></li>
             <li>
                 <a href="${pageContext.request.contextPath}/menuDesabilitarUsuario">Desabilitar Lojista</a>
             </li>
             <li>
+                <a href="${pageContext.request.contextPath}/menuHabilitarUsuario">Habilitar Lojista</a>
+            </li>
+            <li>
                 <a href="${pageContext.request.contextPath}/logout">Logout</a>
             <li><br><br>
-                     <li><a href="ajuda.html">Ajuda</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
         </ul>
     <center>   <h1>SISTEMA GERENCIAL DA A.R.I Inc</h1></center>
 

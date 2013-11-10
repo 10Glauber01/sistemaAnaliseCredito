@@ -7,7 +7,8 @@
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/sample</property>
     <property name="hibernate.connection.username">app</property>
     <property name="hibernate.connection.password">app</property>
-    <property name="hibernate.hbm2ddl.auto">upupdate</property>
+    <property name="hibernate.show_sql">true</property>
     <mapping resource="hibernate.hbm.xml"/>
+    <mapping resource="hibernate1.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

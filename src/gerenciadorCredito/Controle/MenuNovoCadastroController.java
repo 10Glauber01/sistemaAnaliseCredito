@@ -31,8 +31,9 @@ public class MenuNovoCadastroController {
         
         @Path("/cadastrar")
         public void cadastrar(Lojista lojista){
-                result.include("msg", new CadastrarLojista().cadastrar(lojista));
-                result.redirectTo(ResultadosController.class).resultadoMensagem();
+                String msg = new CadastrarLojista().cadastrar(lojista);
+                result.include("msg", msg);
+                result.redirectTo(ResultadosController.class).resultadoMensagem(msg,0);
         }
 
         

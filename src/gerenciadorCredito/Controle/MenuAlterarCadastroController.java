@@ -39,12 +39,15 @@ public class MenuAlterarCadastroController {
         @Path("/alterarCadastro")
 	public void alterarCadastro(Lojista lojista) {
                 LojistaDAO dao = new LojistaDAO();
+                String msg;
                 try{
                     dao.update(lojista);
-                    result.include("msg", "Cadastro alterado com sucesso!");
+                    msg = "Cadastro alterado com sucesso!";
+                    result.include("msg", msg);
                 }catch(Exception e){
-                   result.include("msg", "Falha ao tentar alterar cadastro: CNPJ já cadastrado. <br>"+e);
+                    msg = "Falha ao tentar alterar cadastro: CNPJ já cadastrado. <br>"+e;
+                   result.include("msg", msg);
                 }
-                result.redirectTo(ResultadosController.class).resultadoMensagem();
+                result.redirectTo(ResultadosController.class).resultadoMensagem(msg,4);
 	}
 }

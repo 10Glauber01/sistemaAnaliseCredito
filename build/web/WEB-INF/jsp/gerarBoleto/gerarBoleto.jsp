@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+        <script type="text/javascript" src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="./mascaras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
         <style>
@@ -53,13 +56,13 @@
                     <label> Nome*: </label>
                     <input type="text" name="boleto.nome" required><br><br>                    
                     <label> CPF* (000.000.000-00): </label>
-                    <input type="text" name="boleto.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                    <input id="cpf" type="text" name="boleto.cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
                     <label> Valor*: </label>
                     <input name="boleto.valor" required><br><br>
                     <label> Endereço*: </label>
                     <input type="text" name="boleto.endereco" required> <br><br>
                     <label> CEP*: </label>
-                    <input type="text" name="boleto.cep" pattern="\d{5}-\d{3}" required> <br><br>
+                    <input id="cep" type="text" name="boleto.cep" required> <br><br>
                     <label> Banco*: </label>
                     <select name="boleto.banco">
                         <option value="Caixa"> Caixa</option>

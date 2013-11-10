@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
+        <script type="text/javascript" src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <script src="./mascaras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema de Análise de Crédito</title>
          <script src="/WEB-INF/mascara.js.js"></script>
@@ -57,10 +60,10 @@
                 <li>
                     <label> CPF* : </label><input name="consulta.cpf"
  
-                           onKeyPress="MascaraCPF(this);" maxlength="14" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
+                           id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required><br><br>
                 </li>
                 <li>
-                    <label> RG* (00.000.000-1): </label><input name="consulta.rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" required><br><br>
+                    <label> RG* (00.000.000-1): </label><input name="consulta.rg" pattern="\d{2}\.\d{3}\.\d{3}-\d{1}" id="rg" required><br><br>
                 </li>
 
                 <li>
@@ -155,7 +158,7 @@
 
                 <li>
                     <label> CEP : </label><input name="consulta.cep" 
-                                                onKeyPress="MascaraCep(this);"
+                                                id="cep"
  maxlength="10" 
                     pattern="\d{2}.\d{3}-\d{3}"> 
                 </li>

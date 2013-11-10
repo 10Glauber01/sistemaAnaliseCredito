@@ -16,24 +16,24 @@ import gerenciadorCredito.Model.Lojista;
  * @author vandersonmr
  */
 @Resource
-public class MenuDesabilitarUsuarioController {
+public class MenuHabilitarUsuarioController {
       	private final Result result;
 
-	public MenuDesabilitarUsuarioController(Result result) {
+	public MenuHabilitarUsuarioController(Result result) {
 		this.result = result;
 	}
 
-        @Path("/menuDesabilitarUsuario")
-        public void menuDesabilitarUsuario(){
+        @Path("/menuHabilitarUsuario")
+        public void menuHabilitarUsuario(){
             
         }
         
-	@Path("/desabilitarUsuario")
-	public void desabilitarUsuario(Lojista lojista) {
+	@Path("/habilitarUsuario")
+	public void habilitarUsuario(Lojista lojista) {
             LojistaDAO dao = new LojistaDAO();
-            lojista.setAdmin(-1);
+            lojista.setAdmin(0);
             dao.updateAdmin(lojista);
-            result.include("msg", "Cadastro desabilitado!");
-            result.redirectTo(ResultadosController.class).resultadoMensagem("Cadastro desabilitado!",2);
+            result.include("msg", "Cadastro habilitado!");
+            result.redirectTo(ResultadosController.class).resultadoMensagem("Cadastro habilitado!",1);
 	}
 }

@@ -12,6 +12,7 @@ import org.jrimum.bopepo.Boleto;
 import org.jrimum.bopepo.view.BoletoViewer;
 import org.jrimum.domkee.comum.pessoa.endereco.Endereco;
 import org.jrimum.domkee.comum.pessoa.endereco.UnidadeFederativa;
+import org.jrimum.domkee.financeiro.banco.ParametrosBancariosMap;
 import org.jrimum.domkee.financeiro.banco.febraban.Agencia;
 import org.jrimum.domkee.financeiro.banco.febraban.Carteira;
 import org.jrimum.domkee.financeiro.banco.febraban.Cedente;
@@ -49,13 +50,13 @@ public class GeradorDeBoletos {
         }
 
 
-        contaBancaria.setNumeroDaConta(new NumeroDaConta(123456, "0"));
-        contaBancaria.setCarteira(new Carteira(30));
+        contaBancaria.setNumeroDaConta(new NumeroDaConta(12345, "0"));
+        contaBancaria.setCarteira(new Carteira(8));
         contaBancaria.setAgencia(new Agencia(0001, "1"));
 
         Titulo titulo = new Titulo(contaBancaria, sacado, cedente);
-        titulo.setNumeroDoDocumento("123456");
-        titulo.setNossoNumero("99345678912");
+        titulo.setNumeroDoDocumento("12345");
+        titulo.setNossoNumero("99345678943143");
         titulo.setDigitoDoNossoNumero("5");
         titulo.setValor(BigDecimal.valueOf(boleto.getValor()));
         titulo.setDataDoDocumento(new Date());
@@ -66,7 +67,7 @@ public class GeradorDeBoletos {
         titulo.setMora(BigDecimal.ZERO);
         titulo.setDesconto(new BigDecimal(0.00));
         titulo.setAceite(Titulo.Aceite.A);
-
+        
         Boleto boletogerado = new Boleto(titulo);
 
         boletogerado.setLocalPagamento("Pagável em qualquer banco até a data de vencimento.");

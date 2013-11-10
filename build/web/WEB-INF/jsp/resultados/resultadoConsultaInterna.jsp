@@ -18,7 +18,7 @@
     </head>
     <body>
 
-        <form action="${pageContext.request.contextPath}/menu">
+
             <fieldset>
                 <legend>RELATÓRIO DE COMPORTAMENTO EM NEGÓCIOS</legend>
 
@@ -40,6 +40,6 @@
                 Sistema de Análise de Crédito. 2013. Criado pela equipe <a href="sobre.html">Lobos</a>.
             </fieldset>
 
-        </form>
+
     </body>
 </html>
