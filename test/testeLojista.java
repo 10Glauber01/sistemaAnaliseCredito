@@ -15,10 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author vanderson
- */
+
 public class testeLojista {
 
     @Test
@@ -78,7 +75,7 @@ public class testeLojista {
     @Test
     public void testarBuscarLoginAdmin() {
         Lojista l = new Lojista();
-        l.setEmail("teste");
+        l.setEmail("admin");
         LojistaDAO ld = new LojistaDAO();
         Lojista nl = ld.getLojista(l);
         assertEquals(nl.getAdmin(),1);

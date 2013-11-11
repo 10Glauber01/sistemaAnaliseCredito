@@ -67,6 +67,8 @@
                 <br><br>
                 <li>
                     <input type="submit"  class="btn" value="Realizar Consulta"/><br>
+                    <br>
+                    <a href="./ajuda/ajudaConsultaExterna.html">click aqui para ajuda</a>
                 <spam class="required_notification">Itens com * são obrigatórios.</spam>
                 </li>
                 <br><br>

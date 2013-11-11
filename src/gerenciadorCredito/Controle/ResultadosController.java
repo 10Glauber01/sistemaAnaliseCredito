@@ -56,16 +56,11 @@ public class ResultadosController {
 
     @Path("/resultadoConsultaExterna")
     public void resultadoConsultaExterna(ConsultaExternaDados consulta) {
-        String servidorNome = consulta.getServidor();
-        ServidorExterno server = null;
-        if (servidorNome == null) {
+        ConsultaExterna ce = new ConsultaExterna();
+        ResultadoConsulta res = ce.colsutarExterna(consulta);
+        
+        if (res == null)
             result.redirectTo(MenuConsultaExternaController.class).menuConsultaExterna();
-        } else if (servidorNome.equalsIgnoreCase("serasa")) {
-            server = new Serasa();
-        } else if (servidorNome.equalsIgnoreCase("spc")) {
-            server = new SPC();
-        }
-        ResultadoConsulta res = server.consultar(consulta);
 
         Historico his = new Historico();
         his.setMsg("Consulta externa: " + consulta.getCpf());
